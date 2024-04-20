@@ -65,6 +65,9 @@ return {
 
         -- set a to A (default to append)
         a = "A",
+
+        -- quit shortcut
+        ["<Leader>qa"] = { "<cmd>qa<cr>", desc = "Quit All" },
       },
       t = {
         -- setting a mapping to false will disable it

@@ -2,8 +2,6 @@ return {
   "lukas-reineke/indent-blankline.nvim",
 
   opts = function(_, opts)
-    print(vim.inspect(opts))
-    -- abs
     local highlight = {
       "RainbowRed",
       "RainbowYellow",

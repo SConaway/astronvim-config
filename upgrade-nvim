@@ -1,0 +1,50 @@
+#! /usr/bin/env bash
+
+set -e
+
+mkdir -p "$HOME/.nvim/installs/"
+
+if [ "$(uname)" == "Darwin" ]; then
+	if [ "$(uname -m)" == "arm64" ]; then
+		NAME="nvim-macos-arm64"
+	elif [ "$(uname -m)" == "x86_64" ]; then
+		NAME="nvim-macos-x86_64"
+	fi
+elif [ "$(uname)" == "Linux" ]; then
+	if [ "$(uname -m)" == "arm64" ]; then
+		# NAME="nvim-macos-arm64"
+		echo "$(uname -m) Linux not supported atm :{"
+	elif [ "$(uname -m)" == "x86_64" ]; then
+		NAME="nvim-linux64"
+	fi
+fi
+
+if [ -z "$NAME" ]; then
+	echo "No download found for $(uname -sm)"
+	exit 1
+fi
+
+# echo $NAME
+
+CURRDIR="$PWD"
+INSTALL="$HOME/.nvim/installs/$(date '+%Y-%m-%dT%H-%M-%S')"
+TMP="$(mktemp -d /tmp/$(basename $0).XXXXXX)"
+if [ $? -ne 0 ]; then
+	echo "$0: Can't create temp folder, exiting..."
+	exit 1
+fi
+
+cd "$TMP"
+
+gh release -R neovim/neovim download nightly --clobber -p "$NAME.tar.gz"
+
+tar xf "$NAME.tar.gz"
+mv "$NAME/" "$INSTALL"
+
+ln -sf "$INSTALL/bin/nvim" "$HOME/.local/bin/nvim"
+
+cd "$CURRDIR"
+rm -rf "$TMP"
+
+echo "There are currently $(ls $HOME/.nvim/installs/ | wc -l | xargs) \`nvim\` installs:"
+ls -1 $HOME/.nvim/installs/
