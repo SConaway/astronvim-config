@@ -1,0 +1,5 @@
+make d not copy
+make p not copy overwritten
+experiment with <tab as : 
+"sindrets/diffview.nvim" (`git.diffview-nvim`)
+indent??
