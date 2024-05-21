@@ -17,9 +17,9 @@ return {
       opt = {
         -- relativenumber = true, -- sets vim.opt.relativenumber
         -- number = true,         -- sets vim.opt.number
-        spell = true, -- sets vim.opt.spell
+        spell = false, -- sets vim.opt.spell
         -- signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-        wrap = true,  -- sets vim.opt.wrap
+        wrap = true, -- sets vim.opt.wrap
         breakindent = true,
         breakindentopt = "shift:3",
         tabstop = 4,
