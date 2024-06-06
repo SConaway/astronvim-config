@@ -21,7 +21,7 @@ return {
   -- { import = "astrocommunity.lsp.lsp-signature-nvim" }, -- conflicts with noice?
 
   -- Appearance
-  { import = "astrocommunity.colorscheme.catppuccin" },
+  -- { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.utility.noice-nvim" },
   -- { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
 

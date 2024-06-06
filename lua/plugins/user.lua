@@ -25,7 +25,7 @@ return {
         opts.button(
           "c",
           "  Edit Configuration",
-          ":Neotree action=show source=filesystem position=current dir=~/.config/astronvim<cr>"
+          ":Neotree action=show source=filesystem position=current dir=~/.config/nvim<cr>"
         ),
         -- opts.button("c", "  Edit Configuration", ":e $HOME/.config/astronvim/<cr>"),
         -- opts.button("c", "  Edit Configuration", ":lua vim.notify('ToDo', vim.log.levels.WARN)<cr>"),
