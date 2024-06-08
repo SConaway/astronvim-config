@@ -15,10 +15,12 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.rust" },
 
   -- editing
   -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   -- { import = "astrocommunity.lsp.lsp-signature-nvim" }, -- conflicts with noice?
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
 
   -- Appearance
   -- { import = "astrocommunity.colorscheme.catppuccin" },
