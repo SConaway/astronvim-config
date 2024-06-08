@@ -11,7 +11,7 @@ return {
       -- remove ugly thing
       opts.section.header.val = {}
 
-      -- Icon Names in ~/.local/share/astronvim/lazy/AstroNvim/lua/astronvim/plugins/_astroui.lua
+      -- Icon Names in ~/.local/share/nvim/lazy/AstroNvim/lua/astronvim/plugins/_astroui.lua
       local get_icon = require("astroui").get_icon
       opts.section.buttons.val = {
         opts.button("n", get_icon("FileNew", 2, true) .. "New File", ":e new<cr>"),
@@ -25,7 +25,8 @@ return {
         opts.button(
           "c",
           "  Edit Configuration",
-          ":Neotree action=show source=filesystem position=current dir=~/.config/nvim<cr>"
+          ":cd ~/.config/nvim/<cr> :Neotree action=show source=filesystem <cr>"
+          -- ":Neotree action=show source=filesystem position=current dir=~/.config/nvim<cr>"
         ),
         -- opts.button("c", "  Edit Configuration", ":e $HOME/.config/astronvim/<cr>"),
         -- opts.button("c", "  Edit Configuration", ":lua vim.notify('ToDo', vim.log.levels.WARN)<cr>"),

@@ -52,7 +52,7 @@ return {
 
         -- leader then c: open config
         ["<Leader>c"] = {
-          ":Neotree action=show source=filesystem position=current dir=~/.config/nvim<cr>",
+          ":cd ~/.config/nvim/<cr> :Neotree action=show source=filesystem <cr>",
           desc = "Edit Config",
         },
 
