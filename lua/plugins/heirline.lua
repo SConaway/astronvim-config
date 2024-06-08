@@ -47,18 +47,18 @@ return {
           end,
         },
         update = { -- update should happen when the mode has changed as well as when the time has changed
-          "User",  -- We can use the User autocmd event space to tell the component when to update
+          "User", -- We can use the User autocmd event space to tell the component when to update
           "ModeChanged",
           callback = vim.schedule_wrap(function(_, args)
             if -- update on user UpdateTime event and mode change
-                (args.event == "User" and args.match == "UpdateTime")
-                or (args.event == "ModeChanged" and args.match:match ".*:.*")
+              (args.event == "User" and args.match == "UpdateTime")
+              or (args.event == "ModeChanged" and args.match:match ".*:.*")
             then
               vim.cmd.redrawstatus() -- redraw on update
             end
           end),
         },
-        hl = status.hl.get_attributes "mode",                          -- highlight based on mode attributes
+        hl = status.hl.get_attributes "mode", -- highlight based on mode attributes
         surround = { separator = "right", color = status.hl.mode_bg }, -- background highlight based on mode
       },
       --
@@ -95,21 +95,21 @@ return {
     }
 
     opts.tabline = { -- tabline
-      {              -- file tree padding
+      { -- file tree padding
         condition = function(self)
           self.winid = vim.api.nvim_tabpage_list_wins(0)[1]
           self.winwidth = vim.api.nvim_win_get_width(self.winid)
-          return self.winwidth ~= vim.o.columns                                                -- only apply to sidebars
-              and not require("astrocore.buffer").is_valid(vim.api.nvim_win_get_buf(self.winid)) -- if buffer is not in tabline
+          return self.winwidth ~= vim.o.columns -- only apply to sidebars
+            and not require("astrocore.buffer").is_valid(vim.api.nvim_win_get_buf(self.winid)) -- if buffer is not in tabline
         end,
         provider = function(self) return (" "):rep(self.winwidth + 1) end,
         hl = { bg = "tabline_bg" },
       },
-      status.heirline.make_buflist(status.component.tabline_file_info()),     -- component for each buffer tab
-      status.component.fill { hl = { bg = "tabline_bg" } },                   -- fill the rest of the tabline with background color
-      {                                                                       -- tab list
+      status.heirline.make_buflist(status.component.tabline_file_info()), -- component for each buffer tab
+      status.component.fill { hl = { bg = "tabline_bg" } }, -- fill the rest of the tabline with background color
+      { -- tab list
         condition = function() return #vim.api.nvim_list_tabpages() >= 2 end, -- only show tabs if there are more than one
-        status.heirline.make_tablist {                                        -- component for each tab
+        status.heirline.make_tablist { -- component for each tab
           provider = status.provider.tabnr(),
           hl = function(self) return status.hl.get_attributes(status.heirline.tab_type(self, "tab"), true) end,
         },
@@ -135,11 +135,11 @@ return {
     }
 
     -- Now that we have the component, we need a timer to emit the User UpdateTime event
-    vim.uv.new_timer():start(               -- timer for updating the time
+    vim.uv.new_timer():start( -- timer for updating the time
       (60 - tonumber(os.date "%S")) * 1000, -- offset timer based on current seconds past the minute
-      60000,                                -- update every 60 seconds
+      60000, -- update every 60 seconds
       vim.schedule_wrap(function()
-        vim.api.nvim_exec_autocmds(         -- emit our new User event
+        vim.api.nvim_exec_autocmds( -- emit our new User event
           "User",
           { pattern = "UpdateTime", modeline = false }
         )
