@@ -7,5 +7,7 @@ return {
     ft.set("systemverilog", ft.get "c")
     ---@diagnostic disable-next-line: param-type-mismatch
     ft.set("verilog", ft.get "c")
+    ---@diagnostic disable-next-line: param-type-mismatch
+    ft.set("openscad", ft.get "c")
   end,
 }
