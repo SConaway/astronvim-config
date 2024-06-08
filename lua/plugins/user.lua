@@ -15,13 +15,28 @@ return {
       local get_icon = require("astroui").get_icon
       opts.section.buttons.val = {
         opts.button("n", get_icon("FileNew", 2, true) .. "New File", ":e new<cr>"),
-        opts.button("f", get_icon("Search", 2, true) .. "Find File  "),
-        -- opts.button("LDR f f", get_icon("Search", 2, true) .. "Find File  "),
-        -- opts.button("LDR f o", get_icon("DefaultFile", 2, true) .. "Recents  "),
-        -- opts.button("LDR f w", get_icon("WordFile", 2, true) .. "Find Word  "),
-        -- opts.button("LDR f '", get_icon("Bookmarks", 2, true) .. "Bookmarks  "),
-        -- opts.button("LDR S l", get_icon("Refresh", 2, true) .. "Last Session  "),
-        -- Neotree action=show source=filesystem position=current dir=~/.config/astronvim
+
+        opts.button(
+          "f",
+          get_icon("Search", 2, true) .. "Find File",
+          ":lua require('telescope.builtin').find_files()<cr>"
+        ),
+        opts.button(
+          "w",
+          get_icon("WordFile", 2, true) .. "Find Word",
+          ":lua require('telescope.builtin').live_grep()<cr>"
+        ),
+        opts.button(
+          "h",
+          get_icon("Sort", 2, true) .. "Find history",
+          ":lua require('telescope.builtin').command_history()<cr>"
+        ),
+        opts.button(
+          "H",
+          get_icon("Search", 2, true) .. "Find help",
+          ":lua require('telescope.builtin').help_tags()<cr>"
+        ),
+
         opts.button(
           "c",
           "  Edit Configuration",
