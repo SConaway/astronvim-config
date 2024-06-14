@@ -36,6 +36,7 @@ return {
       -- mode:
       n = {
         -- normal mode
+        -- show current keybinds with `:nmap`
 
         -- navigate buffer tabs with `H` and `L` and S-Up, S-Down
         L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
@@ -68,6 +69,21 @@ return {
 
         -- quit shortcut
         ["<Leader>qa"] = { "<cmd>qa<cr>", desc = "Quit All" },
+
+        -- terminal shortcuts
+        ["<Leader>T"] = { "<Cmd>ToggleTerm direction=float<CR>", desc = "ToggleTerm float" },
+        ["<Leader>tt"] = { "<Cmd>ToggleTerm direction=float<CR>", desc = "ToggleTerm float" },
+
+        -- LazyGit shortcut
+        ["<Leader>G"] = {
+          function()
+            local astro = require "astrocore"
+            local worktree = astro.file_worktree()
+            local flags = worktree and (" --work-tree=%s --git-dir=%s"):format(worktree.toplevel, worktree.gitdir) or ""
+            astro.toggle_term_cmd("lazygit " .. flags)
+          end,
+          desc = "LazyGit",
+        },
       },
       t = {
         -- setting a mapping to false will disable it
