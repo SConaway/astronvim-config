@@ -36,7 +36,7 @@ fi
 
 cd "$TMP"
 
-gh release -R neovim/neovim download nightly --clobber -p "$NAME.tar.gz"
+gh release -R neovim/neovim download v0.10.0 -p "$NAME.tar.gz"
 
 tar xf "$NAME.tar.gz"
 mv "$NAME/" "$INSTALL"
