@@ -84,6 +84,9 @@ return {
           end,
           desc = "LazyGit",
         },
+
+        -- :Lazy shortcut
+        ["<Leader>pl"] = { "<Cmd>Lazy<CR>", desc = "Lazy" },
       },
       t = {
         -- setting a mapping to false will disable it

@@ -17,6 +17,9 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.rust" },
 
+  -- nvim itself
+  { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
+
   -- editing
   -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   -- { import = "astrocommunity.lsp.lsp-signature-nvim" }, -- conflicts with noice?
