@@ -87,6 +87,10 @@ return {
 
         -- :Lazy shortcut
         ["<Leader>pl"] = { "<Cmd>Lazy<CR>", desc = "Lazy" },
+
+        -- VSCode-like duplicate with alt-shift up/down
+        ["<A-S-Up>"] = { '"dyy "dp k', desc = "Duplicate line up" },
+        ["<A-S-Down>"] = { '"dyy "dp', desc = "Duplicate line down" },
       },
       t = {
         -- setting a mapping to false will disable it
