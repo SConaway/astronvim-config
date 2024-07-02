@@ -27,6 +27,9 @@ return {
       return true
     end
 
+    -- inlay hints
+    opts.features.inlay_hints = true
+
     -- return the modified opts
     return opts
   end,

@@ -16,6 +16,7 @@ return {
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.typescript-all-in-one" },
 
   -- nvim itself
   { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
@@ -23,8 +24,10 @@ return {
   -- editing
   -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   -- { import = "astrocommunity.lsp.lsp-signature-nvim" }, -- conflicts with noice?
-  -- { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
+  { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
+  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
+  { import = "astrocommunity.color.nvim-highlight-colors" },
 
   -- Appearance
   -- { import = "astrocommunity.colorscheme.catppuccin" },

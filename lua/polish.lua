@@ -15,6 +15,11 @@
 --   },
 -- }
 
+-- .v is always verilog
+vim.cmd [[
+  au BufNewFile,BufRead *.v set filetype=verilog
+]]
+
 -- enable built-in osc52 support
 -- if $SSH_TTY is set, we are in a ssh session
 if os.getenv "SSH_TTY" then
