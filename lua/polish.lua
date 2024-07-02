@@ -20,6 +20,12 @@ vim.cmd [[
   au BufNewFile,BufRead *.v set filetype=verilog
 ]]
 
+-- tame auto comment (don't comment out the next line if the current line is a comment)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  command = "set formatoptions-=cro",
+})
+
 -- enable built-in osc52 support
 -- if $SSH_TTY is set, we are in a ssh session
 if os.getenv "SSH_TTY" then
