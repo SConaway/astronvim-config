@@ -6,9 +6,21 @@ return {
       ---@type AstroUIOpts
       opts = {
         icons = {
-          Clock = "", -- add icon for clock
+          -- add icon for clock
+          Clock = "",
+
+          -- add icons for Copilot status
+          CopilotDisabled = " ",
+          CopilotEnabled = " ",
+          Copilot = "",
         },
       },
+    },
+    {
+      "jonahgoldwastaken/copilot-status.nvim",
+      dependencies = { "zbirenbaum/copilot.lua" }, -- or "zbirenbaum/copilot.lua"
+      lazy = true,
+      event = "BufReadPost",
     },
   },
   opts = function(_, opts)
@@ -30,6 +42,25 @@ return {
       status.component.cmd_info(),
 
       status.component.fill(),
+
+      -- copilot info via `vim.b.copilot_suggestion_auto_trigger`
+      status.component.builder {
+        {
+          provider = function()
+            local suggestion = vim.b.copilot_suggestion_auto_trigger
+            local message = suggestion and "enabled" or "disabled"
+            -- local icon = "Copilot"
+            local icon = suggestion and "CopilotEnabled" or "CopilotDisabled"
+
+            return status.utils.stylize(message, {
+              icon = { kind = icon, padding = { right = 1 } },
+              padding = { left = 1, right = 1 },
+            })
+          end,
+        },
+        hl = status.hl.get_attributes "mode", -- highlight based on mode attributes
+        surround = { separator = "right", color = status.hl.mode_bg },
+      },
 
       status.component.lsp { lsp_progress = false },
       status.component.virtual_env(),

@@ -17,6 +17,7 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
+  { import = "astrocommunity.pack.go" },
 
   -- nvim itself
   { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
