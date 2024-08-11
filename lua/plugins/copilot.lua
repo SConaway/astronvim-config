@@ -4,17 +4,16 @@ local function toggle()
   local auto_trigger = vim.b.copilot_suggestion_auto_trigger
   -- set the auto trigger to the opposite of what it is
   vim.b.copilot_suggestion_auto_trigger = not auto_trigger
+  -- require("copilot.suggestion").toggle_auto_trigger()
+  -- works too, but since i'm using the status below, decided to manually toggle it
+
   -- if the auto trigger is now on
   if vim.b.copilot_suggestion_auto_trigger then
     -- show a message
     vim.notify "Copilot is on"
-    -- and start the suggestions
-    require("copilot.suggestion").start()
   else
     -- otherwise show a message
     vim.notify "Copilot is off"
-    -- and stop the suggestions
-    -- require("copilot.suggestion").stop()
   end
 end
 

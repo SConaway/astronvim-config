@@ -27,7 +27,7 @@ return {
         shiftwidth = 4,
 
         list = true,
-        listchars = "trail:·,tab:> ",
+        listchars = "trail:·,tab:» ",
       },
     },
     -- Mappings can be configured through AstroCore as well.
