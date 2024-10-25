@@ -10,7 +10,7 @@ return {
       ensure_installed = {
         "lua_ls",
         "svlangserver",
-        "ltex",
+        -- "ltex",
         -- add more arguments for adding more language servers
       },
     },
