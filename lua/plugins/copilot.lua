@@ -32,6 +32,11 @@ return {
         debounce = 25,
         auto_trigger = false,
       },
+      -- force-enable markdown
+      filetypes = {
+        markdown = true,
+        gitcommit = true,
+      },
     },
     keys = {
       -- toggle copilot
