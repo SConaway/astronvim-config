@@ -18,7 +18,6 @@ local function toggle()
 end
 
 ---@type LazySpec
-
 return {
   {
     "zbirenbaum/copilot.lua",

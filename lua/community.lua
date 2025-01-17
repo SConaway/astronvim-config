@@ -23,9 +23,10 @@ return {
   { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
 
   -- editing
-  -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  { import = "astrocommunity.editing-support.text-case-nvim" },
   -- { import = "astrocommunity.lsp.lsp-signature-nvim" }, -- conflicts with noice?
-  { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
+  { import = "astrocommunity.editing-support.auto-save-nvim" },
+  -- { import = "astrocommunity.editing-support.cutlass-nvim" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.color.nvim-highlight-colors" },
