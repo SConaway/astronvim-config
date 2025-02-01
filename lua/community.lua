@@ -8,16 +8,16 @@ return {
 
   -- languages
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.bash" },
-  { import = "astrocommunity.pack.cpp" },
+  -- { import = "astrocommunity.pack.bash" },
+  -- { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.markdown" },
-  { import = "astrocommunity.pack.python" },
+  -- { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.yaml" },
   -- { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.pack.typescript-all-in-one" },
-  { import = "astrocommunity.pack.go" },
+  -- { import = "astrocommunity.pack.typescript-all-in-one" },
+  -- { import = "astrocommunity.pack.go" },
 
   -- nvim itself
   { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
