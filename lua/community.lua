@@ -19,9 +19,6 @@ return {
   -- { import = "astrocommunity.pack.typescript-all-in-one" },
   -- { import = "astrocommunity.pack.go" },
 
-  -- nvim itself
-  { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
-
   -- editing
   { import = "astrocommunity.editing-support.text-case-nvim" },
   -- { import = "astrocommunity.lsp.lsp-signature-nvim" }, -- conflicts with noice?
