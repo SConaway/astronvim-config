@@ -48,7 +48,8 @@ return {
         {
           provider = function()
             local suggestion = vim.b.copilot_suggestion_auto_trigger
-            local message = suggestion and "enabled" or "disabled"
+            -- local message = suggestion and "enabled" or "disabled"
+            local message = " "
             -- local icon = "Copilot"
             local icon = suggestion and "CopilotEnabled" or "CopilotDisabled"
 

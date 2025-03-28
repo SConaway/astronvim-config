@@ -9,14 +9,14 @@ return {
   -- languages
   { import = "astrocommunity.pack.lua" },
   -- { import = "astrocommunity.pack.bash" },
-  -- { import = "astrocommunity.pack.cpp" },
+  { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.markdown" },
-  -- { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.yaml" },
   -- { import = "astrocommunity.pack.rust" },
-  -- { import = "astrocommunity.pack.typescript-all-in-one" },
+  { import = "astrocommunity.pack.typescript-all-in-one" },
   -- { import = "astrocommunity.pack.go" },
 
   -- editing
@@ -40,8 +40,8 @@ return {
   { import = "astrocommunity.markdown-and-latex.vimtex" }, -- modified to be lazier and to work as I like
 
   -- .md rendering
-  -- { import = "astrocommunity.markdown-and-latex.glow-nvim" }, -- wasn't sure how to set up keys so I gave up
   { import = "astrocommunity.markdown-and-latex.peek-nvim" },
+  { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
 
   -- import/override with your plugins folder
 }

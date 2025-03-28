@@ -18,6 +18,7 @@
 -- .v is always verilog
 vim.cmd [[
   au BufNewFile,BufRead *.v set filetype=verilog
+  au BufNewFile,BufRead *.njk set filetype=html
 ]]
 
 -- tame auto comment (don't comment out the next line if the current line is a comment)
