@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -29,9 +27,16 @@ return {
       opt = { -- vim.opt.<key>
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
-        spell = false, -- sets vim.opt.spell
+        spell = true, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
+
+        tabstop = 4,
+        softtabstop = 4,
+        shiftwidth = 4,
+
+        list = true,
+        listchars = "trail:·,tab:» ",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -50,23 +55,36 @@ return {
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
-        -- mappings seen under group name "Buffer"
-        ["<Leader>bd"] = {
-          function()
-            require("astroui.status.heirline").buffer_picker(
-              function(bufnr) require("astrocore.buffer").close(bufnr) end
-            )
-          end,
-          desc = "Close buffer from tabline",
+        -- leader then c: open config
+        ["<Leader>c"] = {
+          ":cd ~/.config/nvim/<cr> :Neotree action=show source=filesystem <cr>",
+          desc = "Edit Config",
         },
 
-        -- tables with just a `desc` key will be registered with which-key if it's installed
-        -- this is useful for naming menus
-        -- ["<Leader>b"] = { desc = "Buffers" },
+        -- [ and ] for h/v split
+        ["["] = { "<C-w>s", desc = "Split horizontal" },
+        ["]"] = { "<C-w>v", desc = "Split vertical" },
 
-        -- setting a mapping to false will disable it
-        -- ["<C-S>"] = false,
+        -- set a to A (default to append)
+        a = "A",
+
+        -- quit shortcut
+        ["<Leader>qa"] = { "<cmd>qa<cr>", desc = "Quit All" },
+
+        -- terminal shortcuts
+        ["<Leader>T"] = { "<Cmd>ToggleTerm direction=float<CR>", desc = "ToggleTerm float" },
+        ["<Leader>tt"] = { "<Cmd>ToggleTerm direction=float<CR>", desc = "ToggleTerm float" },
+
+        -- :Lazy shortcut
+        ["<Leader>pl"] = { "<Cmd>Lazy<CR>", desc = "Lazy" },
+
+        -- VSCode-like duplicate with alt-shift up/down
+        -- TODO: mini.move this?
+        ["<A-S-Up>"] = { '"dyy "dp k', desc = "Duplicate line up" },
+        ["<A-S-Down>"] = { '"dyy "dp', desc = "Duplicate line down" },
       },
     },
   },
 }
+
+-- vim: nospell
