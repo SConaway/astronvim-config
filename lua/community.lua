@@ -21,10 +21,12 @@ return {
   -- { import = "astrocommunity.recipes.heirline-clock-statusline" },
 
   { import = "astrocommunity.editing-support.auto-save-nvim" },
+  { import = "astrocommunity.editing-support.nvim-treesitter-context" },
 
   { import = "astrocommunity.motion.mini-surround" },
 
   { import = "astrocommunity.media.vim-wakatime" },
 
   { import = "astrocommunity.recipes.ai" },
+  { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
 }
