@@ -29,7 +29,9 @@ return {
         number = true, -- sets vim.opt.number
         spell = true, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
-        wrap = false, -- sets vim.opt.wrap
+        wrap = true, -- sets vim.opt.wrap
+        breakindent = true,
+        breakindentopt = "shift:4",
 
         tabstop = 4,
         softtabstop = 4,

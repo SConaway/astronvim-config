@@ -15,10 +15,7 @@ return {
   { import = "astrocommunity.pack.yaml" },
   -- { import = "astrocommunity.pack.rust" },
   -- { import = "astrocommunity.pack.typescript-all-in-one" },
-  -- { import = "astrocommunity.pack.go" },
-
-  -- import/override with your plugins folder
-  -- { import = "astrocommunity.recipes.heirline-clock-statusline" },
+  { import = "astrocommunity.pack.go" },
 
   { import = "astrocommunity.editing-support.auto-save-nvim" },
   { import = "astrocommunity.editing-support.nvim-treesitter-context" },
@@ -28,5 +25,7 @@ return {
   { import = "astrocommunity.media.vim-wakatime" },
 
   { import = "astrocommunity.recipes.ai" },
-  { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
+  -- { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
+
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
 }
