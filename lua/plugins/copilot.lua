@@ -43,6 +43,11 @@ return {
         accept = false, -- handled by completion engine
       },
     },
+    -- force-enable these two
+    filetypes = {
+      markdown = true,
+      gitcommit = true,
+    },
   },
   specs = {
     {
