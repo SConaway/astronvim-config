@@ -26,6 +26,7 @@ return {
     local status = require "astroui.status"
     opts.statusline = { -- statusline
       hl = { fg = "fg", bg = "bg" },
+      -- status.component.mode(),
       status.component.mode { mode_text = { padding = { left = 1, right = 1 } } },
       status.component.git_branch(),
       status.component.file_info(),
@@ -52,13 +53,13 @@ return {
             })
           end,
         },
-        -- hl = status.hl.get_attributes "mode", -- highlight based on mode attributes
-        -- surround = { separator = "right", color = status.hl.mode_bg },
+        hl = { fg = "black" },
+        surround = { separator = "right", color = status.hl.mode_bg },
       },
 
       status.component.lsp(),
       status.component.virtual_env(),
-      status.component.treesitter(),
+      -- status.component.treesitter(),
       status.component.nav(),
       -- Create a custom component to display the time
       status.component.builder {
@@ -67,7 +68,7 @@ return {
             local time = os.date "%H:%M" -- show hour and minute in 24 hour format
             ---@cast time string
             return status.utils.stylize(time, {
-              -- icon = { kind = "Clock", padding = { right = 1 } }, -- use our new clock icon
+              icon = { kind = "Clock", padding = { right = 1 } }, -- use our new clock icon
               padding = { left = 1, right = 1 }, -- pad the right side so it's not cramped
             })
           end,
@@ -84,8 +85,8 @@ return {
             end
           end),
         },
-        -- hl = status.hl.get_attributes "mode", -- highlight based on mode attributes
-        -- surround = { separator = "right", color = status.hl.mode_bg }, -- background highlight based on mode
+        hl = { fg = "black" },
+        surround = { separator = "right", color = status.hl.mode_bg },
       },
     }
 
