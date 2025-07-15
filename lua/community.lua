@@ -18,7 +18,9 @@ return {
   { import = "astrocommunity.pack.go" },
 
   { import = "astrocommunity.editing-support.auto-save-nvim" },
-  { import = "astrocommunity.editing-support.nvim-treesitter-context" },
+  -- { import = "astrocommunity.editing-support.nvim-treesitter-context" },
+
+  { import = "astrocommunity.color.twilight-nvim" },
 
   { import = "astrocommunity.motion.mini-surround" },
 
