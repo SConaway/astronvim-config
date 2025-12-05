@@ -35,7 +35,7 @@ return {
 
         tabstop = 4,
         softtabstop = 4,
-        shiftwidth = 4,
+        shiftwidth = 0, -- change to 0 to use sts instead
 
         list = true,
         listchars = "trail:·,tab:» ",

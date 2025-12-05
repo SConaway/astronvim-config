@@ -9,18 +9,18 @@ return {
           Clock = "", -- add icon for clock
 
           -- add icons for Copilot status
-          CopilotDisabled = " ",
-          CopilotEnabled = " ",
-          Copilot = "",
+          -- CopilotDisabled = " ",
+          -- CopilotEnabled = " ",
+          -- Copilot = "",
         },
       },
     },
-    {
-      "jonahgoldwastaken/copilot-status.nvim",
-      dependencies = { "zbirenbaum/copilot.lua" },
-      lazy = true,
-      event = "BufReadPost",
-    },
+    -- {
+    --   "jonahgoldwastaken/copilot-status.nvim",
+    --   dependencies = { "zbirenbaum/copilot.lua" },
+    --   lazy = true,
+    --   event = "BufReadPost",
+    -- },
   },
   opts = function(_, opts)
     local status = require "astroui.status"
@@ -40,22 +40,22 @@ return {
       status.component.fill(),
 
       -- copilot info via `vim.b.copilot_suggestion_auto_trigger`
-      status.component.builder {
-        {
-          provider = function()
-            local suggestion = vim.b.copilot_suggestion_auto_trigger
-            local message = suggestion and "" or ""
-            local icon = "Copilot"
-
-            return status.utils.stylize(message, {
-              icon = { kind = icon, padding = { right = 1 } },
-              padding = { left = 1, right = 1 },
-            })
-          end,
-        },
-        hl = { fg = "black" },
-        surround = { separator = "right", color = status.hl.mode_bg },
-      },
+      -- status.component.builder {
+      --   {
+      --     provider = function()
+      --       local suggestion = vim.b.copilot_suggestion_auto_trigger
+      --       local message = suggestion and "" or ""
+      --       local icon = "Copilot"
+      --
+      --       return status.utils.stylize(message, {
+      --         icon = { kind = icon, padding = { right = 1 } },
+      --         padding = { left = 1, right = 1 },
+      --       })
+      --     end,
+      --   },
+      --   hl = { fg = "black" },
+      --   surround = { separator = "right", color = status.hl.mode_bg },
+      -- },
 
       status.component.lsp(),
       status.component.virtual_env(),
