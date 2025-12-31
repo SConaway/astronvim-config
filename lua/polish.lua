@@ -15,6 +15,14 @@
 --   },
 -- }
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "openscad",
+  callback = function()
+    vim.bo.commentstring = "// %s"
+  end,
+})
+
+
 -- .v is always verilog
 vim.cmd [[
   au BufNewFile,BufRead *.v set filetype=verilog
