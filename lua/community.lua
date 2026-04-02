@@ -27,7 +27,7 @@ return {
 
   { import = "astrocommunity.media.vim-wakatime" },
 
-  { import = "astrocommunity.editing-support.codecompanion-nvim" },
+  { import = "astrocommunity.ai.codecompanion-nvim" },
   -- { import = "astrocommunity.recipes.ai" },
   -- { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
 
