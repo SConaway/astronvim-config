@@ -81,9 +81,23 @@ return {
         ["<Leader>pl"] = { "<Cmd>Lazy<CR>", desc = "Lazy" },
 
         -- VSCode-like duplicate with alt-shift up/down
-        -- TODO: mini.move this?
-        ["<A-S-Up>"] = { '"dyy "dp k', desc = "Duplicate line up" },
-        ["<A-S-Down>"] = { '"dyy "dp', desc = "Duplicate line down" },
+        ["<A-S-Up>"] = {
+          function()
+            local line = vim.api.nvim_get_current_line()
+            local cursor = vim.api.nvim_win_get_cursor(0)
+            vim.api.nvim_buf_set_lines(0, cursor[1] - 1, cursor[1] - 1, false, { line })
+            vim.api.nvim_win_set_cursor(0, { cursor[1] + 1, cursor[2] })
+          end,
+          desc = "Duplicate line up",
+        },
+        ["<A-S-Down>"] = {
+          function()
+            local line = vim.api.nvim_get_current_line()
+            local cursor = vim.api.nvim_win_get_cursor(0)
+            vim.api.nvim_buf_set_lines(0, cursor[1], cursor[1], false, { line })
+          end,
+          desc = "Duplicate line down",
+        },
       },
     },
   },
